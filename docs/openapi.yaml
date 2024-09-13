@@ -52,6 +52,9 @@ components:
     Avengers:
       type: object
       properties:
+        id:
+          type: number
+          example: 1
         nick: 
           type: string
           example: spider-man
