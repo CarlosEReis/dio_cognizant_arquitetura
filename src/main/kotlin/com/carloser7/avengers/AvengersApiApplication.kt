@@ -1,4 +1,4 @@
-package com.carloser7.avengers.avengers_api
+package com.carloser7.avengers
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
