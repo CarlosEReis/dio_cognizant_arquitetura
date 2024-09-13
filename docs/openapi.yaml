@@ -1,0 +1,66 @@
+openapi: 3.0.3
+info:
+  title: Avengers API
+  description: |-
+    Avengers API - Live coding
+  contact:
+    email: carlos.er7@gmail.com
+  version: 1.0.0
+servers:
+  - url: https://com.carloser7/avengers
+paths:
+  /v1/api/avengers:
+    get:
+     tags:
+     - Avenger
+     summary: GET Avengers
+     description: Get Avengers
+     responses:
+        '200':
+          description: GET Avengers
+          content:
+            application/json:
+              schema:
+                type: array
+                items: 
+                 $ref: '#/components/schemas/Avengers'
+  /v1/api/avenger/{avengerId}:
+    get:
+     tags:
+     - Avenger
+     summary: GET Avengers
+     description: Get Avengers
+     parameters:
+        - name: avengerId
+          in: path
+          description: ID of pet to return
+          required: true
+          schema:
+            type: integer
+            format: int64
+     responses:
+        '200':
+          description: GET Avengers
+          content:
+            application/json:
+              schema:
+                type: object
+                items: 
+                 $ref: '#/components/schemas/Avengers'
+components:
+  schemas:
+    Avengers:
+      type: object
+      properties:
+        nick: 
+          type: string
+          example: spider-man
+        person: 
+          type: string
+          example: Peter Parker  
+        description:
+          type: string
+          example: Super Poderes
+        history: 
+          type: string
+          example: A História
