@@ -1,0 +1,23 @@
+version: '3.2'
+services:
+
+  postgres:
+    image: postgres:12-alpine
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+      ALLOW_IP_RANGE: 0.0.0.0/0
+    ports:
+      - '25433:5432'
+    volumes:
+      - pdb12:/var/lib/postgresql/data
+    networks:
+      - postgres-compose-network
+
+volumes:
+  pdb12:
+
+networks:
+  postgres-compose-network:
+    driver: bridge
